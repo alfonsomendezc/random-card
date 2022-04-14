@@ -21,26 +21,17 @@ body {
   position: absolute;
   bottom: 10px;
   right: 15px;
+  transform: rotate(180deg);
 }
 
 .number {
   line-height: 400px;
 }
 
-.card.bottom-suit.spades {
+.card-black {
   color: black;
-  content: "\2660";
 }
 
-.card.clubs {
-  color: black;
-  content: "&clubs;";
-}
-.card.hearts {
+.card-red {
   color: red;
-  content: "\2665";
-}
-.card.diamonds {
-  color: red;
-  content: "\2666";
 }

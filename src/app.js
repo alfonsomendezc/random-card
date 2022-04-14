@@ -5,7 +5,9 @@ import "./style.css";
 window.onload = () => {
   document.querySelector(".card").classList.add(generadorDeIconos());
   document.querySelector(".number").innerHTML = generadorDeNumeros();
-  document.querySelector(".top-suit").innerHTML = generadorDeSuits();
+  let suit = generadorDeSuits();
+  document.querySelector(".top-suit").innerHTML = suit;
+  document.querySelector(".bottom-suit").innerHTML = suit;
 };
 
 let generadorDeNumeros = () => {
@@ -28,14 +30,15 @@ let generadorDeNumeros = () => {
   return numbers[indiceN];
 };
 
-let generadorDeIconos = () => {
-  let iconos = ["spades", "clubs", "hearts", "diamonds"];
-  let indiceI = ~~(Math.random() * iconos.length);
-  return iconos[indiceI];
-};
+// crear condicional iconos - clases
 
 let generadorDeSuits = () => {
   let iconos = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
   let indiceI = ~~(Math.random() * iconos.length);
   return iconos[indiceI];
+  let generadorDeIconos = () => {
+    let iconos = ["black", "red"];
+    if iconos
+  };
 };
+
