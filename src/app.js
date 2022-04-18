@@ -3,11 +3,11 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector(".card").classList.add(generadorDeIconos());
   document.querySelector(".number").innerHTML = generadorDeNumeros();
   let suit = generadorDeSuits();
-  document.querySelector(".top-suit").innerHTML = suit;
-  document.querySelector(".bottom-suit").innerHTML = suit;
+  document.querySelector(".topSuit").innerHTML = suit;
+  document.querySelector(".bottomSuit").innerHTML = suit;
+  document.querySelector(".card").classList.add(generadorDeClases(suit));
 };
 
 let generadorDeNumeros = () => {
@@ -30,15 +30,16 @@ let generadorDeNumeros = () => {
   return numbers[indiceN];
 };
 
-// crear condicional iconos - clases
-
 let generadorDeSuits = () => {
-  let iconos = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
-  let indiceI = ~~(Math.random() * iconos.length);
-  return iconos[indiceI];
-  let generadorDeIconos = () => {
-    let iconos = ["black", "red"];
-    if iconos
-  };
+  let suits = ["♠", "♣", "♥", "♦"];
+  let indiceS = ~~(Math.random() * suits.length);
+  return suits[indiceS];
 };
 
+let generadorDeClases = suit => {
+  if (suit === "♥" || suit === "♦") {
+    document.querySelector(".card").classList.add("red");
+  } else {
+    document.querySelector(".card").classList.add("black");
+  }
+};
